@@ -378,6 +378,8 @@ void egl_dmabuf_create_fence(QemuDmaBuf *dmabuf)
 
 /* ---------------------------------------------------------------------- */
 
+#ifdef CONFIG_EGL
+
 EGLSurface qemu_egl_init_surface_x11(EGLContext ectx, EGLNativeWindowType win)
 {
     EGLSurface esurface;
@@ -593,3 +595,5 @@ bool egl_init(const char *rendernode, DisplayGLMode mode, Error **errp)
     return false;
 #endif
 }
+
+#endif //#ifdef CONFIG_EGL
